@@ -21,6 +21,10 @@ datos=cursor.fetchall()
 print(datos[0][1])'''
 
 
+@app.route('/ping')
+def ping():
+    return 'Pong!'
+
 # Endpoint para obtener la zona dado el nodo
 @app.route('/poligonos/<string:nodo>/zona', methods=['GET'])
 def get_user_age(nodo):
@@ -35,6 +39,8 @@ def get_user_age(nodo):
         return jsonify({'zona': zona[0][1]})
     else:
         return jsonify({'error': 'Usuario no encontrado'})
+
+
 
 if __name__ == '__main__':
     app.run()
