@@ -26,6 +26,6 @@ rasterio==1.2.6
 shapely==1.7.1
 six==1.16.0
 snuggs==1.4.7
-Werkzeug==2.1.5
+Werkzeug==0.16.1
 zipp==3.14.0
 pip == 23.0.1
