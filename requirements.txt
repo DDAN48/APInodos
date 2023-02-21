@@ -17,6 +17,6 @@ openpyxl==3.1.0
 packaging==23.0
 pyodbc==4.0.35
 pyparsing==3.0.9
-
+PyMySQL==1.0.2
 python-dateutil==2.8.2
 

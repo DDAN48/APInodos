@@ -23,7 +23,7 @@ print(datos[0][1])'''
 
 @app.route('/ping')
 def ping():
-    return 'Pong!'
+    return jsonify({'message': 'Pong!'})
 
 # Endpoint para obtener la zona dado el nodo
 @app.route('/poligonos/<string:nodo>/zona', methods=['GET'])
