@@ -1,25 +1,12 @@
 from flask import Flask, jsonify, request
 import pyodbc
 import pymysql
+from credenciales from server
 
 app = Flask(__name__)
 
 # Configuración de la conexión a SQL Server
-server = 'us-east.connect.psdb.cloud'
-databases = 'poligonostlc'
-
-username = '0cv28h5f1h1csdel4y6p'
-clave = 'pscale_pw_17erBbPBTK1q3dPc7ZhnmgFE52sgZ2s02qUBrGeAMxG'
-
 conn=pymysql.connect(user=username, password=clave,host=server,  database=databases,port=3306,ssl={'ssl': {'ca': 'path/to/cert.pem'}})
-"""cursor=conn.cursor()"""
-
-'''sql_query = "select * from poligonos where nodo='PI05A' ;"
-cursor.execute(sql_query)
-datos=cursor.fetchall()
-
-print(datos[0][1])'''
-
 
 @app.route('/ping')
 def ping():
