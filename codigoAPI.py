@@ -17,20 +17,7 @@ conn=pymysql.connect(user=username, password=clave,host=server,  database=databa
 def ping():
     return jsonify({'message': 'Pong!'})
 
-# Endpoint para obtener la zona dado el nodo
-@app.route('/poligonos/<string:nodo>/zona', methods=['GET'])
-def get_user_age(nodo):
-   
-    cursor = conn.cursor()
-    sql_query = f'select * from poligonos where nodo="{nodo}";'
-    '''f'select * from poligonos WHERE nodo={nod};'''
-    cursor.execute(sql_query)
-    zona = cursor.fetchall()
-    cursor.close()
-    if zona:
-        return jsonify({'zona': zona[0][1]})
-    else:
-        return jsonify({'error': 'Usuario no encontrado'})
+
 
 
 # Endpoint para obtener NODO , PARTIDO , JEFATURA del cliente
